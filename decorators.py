@@ -14,7 +14,7 @@ def decorate_non_cls_methods(decorator):
     @decorate_non_cls_methods(monitor)
     class SampleClass:
 
-        # prometheus decorator will not be applied on dunders
+        # monitor decorator will not be applied on dunders
         def __init__(self):
             pass
 
@@ -22,14 +22,14 @@ def decorate_non_cls_methods(decorator):
         def instance_method(self):
             pass
 
-        # prometheus decorator will not be applied
+        # monitor decorator will not be applied
         @classmethod
         def class_method1(cls):
             pass
 
-        # prometheus decorator will not be applied but we have added it explicitly
+        # monitor decorator will not be applied but we have added it explicitly
         @classmethod
-        @prometheus
+        @monitor
         def class_method2(cls):
             pass
 
